@@ -31,4 +31,34 @@ body {
   background: rgb(2,150,153);
   background: linear-gradient(90deg, rgba(2,150,153,1) 0%, rgba(11,168,169,1) 0%, rgba(180,240,255,1) 100%);
 }
+/* Style for the default state */
+/* Style for the default state */
+.link {
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Style for the hover state */
+.link:hover {
+  text-decoration: none;
+}
+
+/* Underline animation */
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #3498db; /* You can change the color as needed */
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+
 
