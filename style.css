@@ -27,3 +27,8 @@ body {
   background-position: top left;
 }
 
+.banner-card{
+  background: rgb(2,150,153);
+  background: linear-gradient(90deg, rgba(2,150,153,1) 0%, rgba(11,168,169,1) 0%, rgba(180,240,255,1) 100%);
+}
+
