@@ -1,5 +1,5 @@
 // Array of image paths
-const imagePaths = [
+const FimagePaths = [
     "./img/featured/card-image1.jpg",
     "./img/featured/card-image2.jpg",
     "./img/featured/card-image3.jpg",
@@ -41,6 +41,22 @@ const imagePaths = [
     colDiv.appendChild(cardDiv);
     cardContainer.appendChild(colDiv);
   }
+  
+  // Loop through image paths and create cards
+  for (let i = 0; i < FimagePaths.length; i++) {
+    // Example prices - replace with actual data if available
+    const prices = ["$999", "$999", "$999", "$99"];
+    createCard(FimagePaths[i], prices[i]);
+  }
+  
+  // Array of image paths
+const LimagePaths = [
+    "./img/featured/card-image1.jpg",
+    "./img/featured/card-image2.jpg",
+    "./img/featured/card-image3.jpg",
+    "./img/featured/card-image5.jpg"
+  ];
+  
   
   // Loop through image paths and create cards
   for (let i = 0; i < imagePaths.length; i++) {
