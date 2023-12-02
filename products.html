@@ -63,39 +63,51 @@
       <!-- *************************** nav bar end ******************************** -->
     </header>
     <!-- *************************** header end *********************************** -->
+<!-- Add a link to the bootstrap CDN in the head section of your HTML document -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
 
-
-
-
-    <section class="product-section" id="menProducts">
+<!-- Use the bootstrap container class to center the content and add some margin -->
+<div class="container my-4">
+  <!-- Use the bootstrap row class to create a grid layout for the sections -->
+  <div class="row">
+    <!-- Use the bootstrap col classes to specify the number of columns for different screen sizes -->
+    <!-- For large screens, use col-lg-3 to create four columns -->
+    <!-- For medium screens, use col-md-4 to create three columns -->
+    <!-- For small screens, use col-sm-12 to create one column -->
+    <div class="col-lg-3 col-md-4 col-sm-12">
+      <section class="product-section" id="menProducts">
         <h2>Men's Products</h2>
         <div class="products" id="menProductsList">
           <!-- Men's products will be dynamically added here -->
         </div>
       </section>
-      
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-12">
       <section class="product-section" id="womenProducts">
         <h2>Women's Products</h2>
         <div class="products" id="womenProductsList">
           <!-- Women's products will be dynamically added here -->
         </div>
       </section>
-      
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-12">
       <section class="product-section" id="featuredItems">
         <h2>Featured Items</h2>
         <div class="products" id="featuredItemsList">
           <!-- Featured items will be dynamically added here -->
         </div>
       </section>
-      
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-12">
       <section class="product-section" id="latestProducts">
         <h2>Latest Products</h2>
         <div class="products" id="latestProductsList">
           <!-- Latest products will be dynamically added here -->
         </div>
       </section>
-
-
+    </div>
+  </div>
+</div>
 
 
 
