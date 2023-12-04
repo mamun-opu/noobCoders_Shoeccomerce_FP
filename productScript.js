@@ -94,101 +94,84 @@ const latestProductsData = [
   },
 ];
 
-// function createProductCard(product) {
-//     const { name, image, price } = product;
-  
-//     const productContainer = document.createElement('div');
-//     productContainer.classList.add('product');
-//     productContainer.classList.add("col");
-  
-//     const productDiv = document.createElement("div");
-//     productDiv.classList.add("card", "h-100");
-  
-//     const productImage = document.createElement('img');
-//     productImage.src = image;
-//     productImage.classList.add("card-img-top");
-//     productImage.alt = name;
-  
-//     const productBody = document.createElement("div");
-//     productBody.classList.add("card-body");
-  
-//     const productName = document.createElement('p');
-//     productName.textContent = name;
-//     productName.classList.add("card-title");
-  
-//     const productPrice = document.createElement('p');
-//     productPrice.textContent = price;
-//     productPrice.classList.add("card-text");
-  
-//     productDiv.appendChild(productImage);
-//     productBody.appendChild(productName);
-//     productBody.appendChild(productPrice);
-//     productDiv.appendChild(productBody);
-//     productContainer.appendChild(productDiv);
-  
-//     return productContainer;
-//   }
-  
-//   function populateProducts(data, containerId) {
-//     const container = document.getElementById(containerId);
-//     data.forEach(product => {
-//       const productCard = createProductCard(product);
-//       container.appendChild(productCard);
-//     });
-//   }
-  
-  // Populate each section with corresponding product data
-//   populateProducts(menProductsData, 'menProductsList');
-//   populateProducts(womenProductsData, 'womenProductsList');
-//   populateProducts(featuredItemsData, 'featuredItemsList');
-//   populateProducts(latestProductsData, 'latestProductsList');
+function createCard(imagePath, title, price) {
+  const cardContainer = document.createElement("div");
+  cardContainer.classList.add("col");
 
-  function createCard(imagePath, title, price) {
-    console.log(imagePath)
-    const cardContainer = document.createElement("div");
-    cardContainer.classList.add("col");
-  
-    const cardDiv = document.createElement("div");
-    cardDiv.classList.add("card", "h-100");
-  
-    const img = document.createElement("img");
-    img.src = imagePath;
-    img.classList.add("card-img-top");
-    img.alt = "Card image";
-  
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
-  
-    const cardTitle = document.createElement("p");
-    cardTitle.classList.add("card-title");
-    cardTitle.textContent = title;
-  
-    const cardPrice = document.createElement("p");
-    cardPrice.classList.add("card-text");
-    cardPrice.textContent = price;
-  
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardPrice);
-    cardDiv.appendChild(img);
-    cardDiv.appendChild(cardBody);
-    cardContainer.appendChild(cardDiv);
-  
-    return cardContainer;
-  }
+  const cardDiv = document.createElement("div");
+  cardDiv.classList.add("card", "h-100", "position-relative");
+
+  const imgContainer = document.createElement("div");
+  imgContainer.classList.add("position-relative");
+
+  const img = document.createElement("img");
+  img.src = imagePath;
+  img.classList.add("card-img-top");
+  img.alt = "Card image";
+
+  const cardBody = document.createElement("div");
+  cardBody.classList.add("card-body", "p-3");
+
+  const cardTitle = document.createElement("p");
+  cardTitle.classList.add("card-title");
+  cardTitle.textContent = title;
+
+  const cardPrice = document.createElement("p");
+  cardPrice.classList.add("card-text");
+  cardPrice.textContent = price;
+
+  const addToCartBtn = document.createElement("button");
+  addToCartBtn.textContent = "Add to Cart";
+  addToCartBtn.classList.add("btn", "btn-primary", "add-to-cart", "position-absolute", "top-50", "start-50", "translate-middle", "d-none");
+
+  imgContainer.appendChild(img);
+  imgContainer.appendChild(addToCartBtn);
+  cardBody.appendChild(cardTitle);
+  cardBody.appendChild(cardPrice);
+  cardDiv.appendChild(imgContainer);
+  cardDiv.appendChild(cardBody);
+  cardContainer.appendChild(cardDiv);
+
+  cardDiv.addEventListener("mouseenter", () => {
+    addToCartBtn.classList.replace("d-none", "d-block");
+    img.style.filter = "blur(1px)";
+  });
+
+  cardDiv.addEventListener("mouseleave", () => {
+    addToCartBtn.classList.replace("d-block", "d-none");
+    img.style.filter = "none";
+  });
+
+  addToCartBtn.addEventListener("click", () => {
+    console.log(`Added to cart: ${title} - ${price}`);
+  });
+
+  return cardContainer;
+}
+
+// Rest of your code remains unchanged...
+
+// Rest of your code remains unchanged...
 
 
-  function populateCards(data, containerId) {
-    const cardContainer = document.getElementById(containerId);
-  
-    data.forEach((item) => {
-      const { image, name, price } = item;
-      const card = createCard(image, name, price);
-      cardContainer.appendChild(card);
-    });
-  }
+// Rest of your code remains unchanged...
 
-  
-  populateCards(menProductsData, "menProducts");
-  populateCards(womenProductsData, "womenProductsList");
-  populateCards(featuredItemsData, "featureProductsList");
-  populateCards(latestProductsData, "latestProductsList");
+
+// Rest of your cod
+
+
+
+function populateCards(data, containerId) {
+  const cardContainer = document.getElementById(containerId);
+
+  data.forEach((item) => {
+    const { image, name, price } = item;
+    const card = createCard(image, name, price);
+    cardContainer.appendChild(card);
+  });
+}
+
+populateCards(menProductsData, "menProducts");
+populateCards(womenProductsData, "womenProductsList");
+populateCards(featuredItemsData, "featureProductsList");
+populateCards(latestProductsData, "latestProductsList");
