@@ -59,6 +59,20 @@ body {
 .link:hover::after {
   width: 100%;
 }
+/* product card */
+
+.blur-on-hover.blur {
+  filter: blur(1px);
+}
+
+.add-to-cart {
+  transition: opacity 0.3s ease;
+}
+
+.add-to-cart:hover {
+  opacity: 1;
+}
+
 
 
 

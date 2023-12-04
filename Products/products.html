@@ -21,7 +21,7 @@
       <nav class="navbar sticky-top navbar-expand-lg container">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="./img/logo.png" alt="Bootstrap" width="70" height="75" />
+            <img src="../img/logo.png" alt="Bootstrap" width="70" height="75" />
           </a>
           <button
             class="navbar-toggler"
@@ -37,7 +37,7 @@
           <div class="collapse navbar-collapse fw-bold" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./index.html"
+                <a class="nav-link" aria-current="page" href="../index.html"
                   >Home</a
                 >
               </li>
@@ -45,10 +45,10 @@
                 <a class="nav-link" href="#">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./mens.html">Men</a>
+                <a class="nav-link" href="../men/mens.html">Men</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./womens.html">Women</a>
+                <a class="nav-link" href="../women/womens.html">Women</a>
               </li>
             </ul>
             <ul class="d-flex navbar-nav mb-2 mb-lg-0">
@@ -56,7 +56,7 @@
                 <a class="nav-link" href="#">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Cart</a>
+                <a class="nav-link" href="../Cart/cart.html">Cart</a>
               </li>
             </ul>
           </div>
@@ -69,35 +69,42 @@
     <!-- Use the bootstrap container class to center the content and add some margin -->
 
     <section class="product-section container">
-      <h5 class="my-3">Feature Products</h5>
-      <div class="products row row-cols-2 row-cols-md-4 g-4" id="featureProductsList">
-        <!-- Men's products will be dynamically added here -->
+  
+
+      <div class="product-card">
+        <h5 class="my-3">Feature Products</h5>
+        <div
+          class="products row row-cols-2 row-cols-md-4 g-4"
+          id="featureProductsList"
+        >
+          <!-- Men's products will be dynamically added here -->
+        </div>
+      </div>
+      <div class="product-card">
+        <h2 class="my-3">Latest Products</h2>
+        <div
+          class="products row row-cols-2 row-cols-md-4 g-4"
+          id="latestProductsList"
+        >
+          <!-- Men's products will be dynamically added here -->
+        </div>
+      </div>
+      <div class="product-card">
+        <h5 class="my-3">Men's Products</h5>
+        <div class="row row-cols-2 row-cols-md-4 g-4" id="menProducts">
+          <!-- Latest products will be dynamically added here -->
+        </div>
+      </div>
+      <div class="product-card">
+        <h5 class="my-3">Women's Products</h5>
+        <div
+          class="products row row-cols-2 row-cols-md-4 g-4"
+          id="womenProductsList"
+        >
+          <!-- Men's products will be dynamically added here -->
+        </div>
       </div>
     </section>
-
-    <section class="product-section container">
-      <h2 class="my-3">Latest Products</h2>
-      <div class="products row row-cols-2 row-cols-md-4 g-4" id="latestProductsList">
-        <!-- Men's products will be dynamically added here -->
-      </div>
-    </section>
-
-    <section class="product-section container">
-      <h5 class="my-3">Women's Products</h5>
-      <div class="products row row-cols-2 row-cols-md-4 g-4" id="womenProductsList">
-        <!-- Men's products will be dynamically added here -->
-      </div>
-    </section>
-    <section class="latest container">
-      <h5 class="my-3">Men's Products</h5>
-      <div class="row row-cols-2 row-cols-md-4 g-4" id="menProducts">
-        <!-- Latest products will be dynamically added here -->
-      </div>
-    </section>
-
-
-    
-
 
     <!-- *************************** Footer start ****************************** -->
 
@@ -178,6 +185,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="productScript.js"></script>
+    <script type="module" src="productScript.js"></script>
   </body>
 </html>
