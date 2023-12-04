@@ -1,5 +1,5 @@
 import {menProductsData, womenProductsData, featuredItemsData, latestProductsData} from '../resources/data.js';
-import { getCart, updateCart } from '../Cart/Cart.js';
+// import { getCart, updateCart } from '../Cart/Cart.js';
 
 
 function createCard(item) {
@@ -54,7 +54,10 @@ function createCard(item) {
 // add to card click listener -------
   addToCartBtn.addEventListener("click", () => {
     console.log(`Added to cart: ${name} - ${price}`);
-    updateCart(item);
+    // if(updateCart()){
+    //   updateCart(item);
+    // }
+    
     
     addToCartBtn.textContent = "Added";
   });
