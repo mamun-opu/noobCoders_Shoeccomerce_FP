@@ -1,6 +1,9 @@
 import {menProductsData, womenProductsData, featuredItemsData, latestProductsData} from '../resources/data.js';
+import { getCart, updateCart } from '../Cart/Cart.js';
 
-function createCard(imagePath, title, price) {
+
+function createCard(item) {
+  const { image, name, price } = item;
   const cardContainer = document.createElement("div");
   cardContainer.classList.add("col");
 
@@ -11,7 +14,7 @@ function createCard(imagePath, title, price) {
   imgContainer.classList.add("position-relative");
 
   const img = document.createElement("img");
-  img.src = imagePath;
+  img.src = image;
   img.classList.add("card-img-top");
   img.alt = "Card image";
 
@@ -20,7 +23,7 @@ function createCard(imagePath, title, price) {
 
   const cardTitle = document.createElement("p");
   cardTitle.classList.add("card-title");
-  cardTitle.textContent = title;
+  cardTitle.textContent = name;
 
   const cardPrice = document.createElement("p");
   cardPrice.classList.add("card-text");
@@ -48,8 +51,11 @@ function createCard(imagePath, title, price) {
     img.style.filter = "none";
   });
 
+// add to card click listener -------
   addToCartBtn.addEventListener("click", () => {
-    console.log(`Added to cart: ${title} - ${price}`);
+    console.log(`Added to cart: ${name} - ${price}`);
+    updateCart(item);
+    
     addToCartBtn.textContent = "Added";
   });
 
@@ -61,10 +67,8 @@ function createCard(imagePath, title, price) {
 
 function populateCards(data, containerId) {
   const cardContainer = document.getElementById(containerId);
-
   data.forEach((item) => {
-    const { image, name, price } = item;
-    const card = createCard(image, name, price);
+    const card = createCard(item);
     cardContainer.appendChild(card);
   });
 }
