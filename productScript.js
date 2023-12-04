@@ -93,51 +93,102 @@ const latestProductsData = [
     price: "$79",
   },
 ];
-function createProductCard(product) {
-    const { name, image, price } = product;
+
+// function createProductCard(product) {
+//     const { name, image, price } = product;
   
-    const productContainer = document.createElement('div');
-    productContainer.classList.add('product');
-    productContainer.classList.add("col");
+//     const productContainer = document.createElement('div');
+//     productContainer.classList.add('product');
+//     productContainer.classList.add("col");
   
-    const productDiv = document.createElement("div");
-    productDiv.classList.add("card", "h-100");
+//     const productDiv = document.createElement("div");
+//     productDiv.classList.add("card", "h-100");
   
-    const productImage = document.createElement('img');
-    productImage.src = image;
-    productImage.classList.add("card-img-top");
-    productImage.alt = name;
+//     const productImage = document.createElement('img');
+//     productImage.src = image;
+//     productImage.classList.add("card-img-top");
+//     productImage.alt = name;
   
-    const productBody = document.createElement("div");
-    productBody.classList.add("card-body");
+//     const productBody = document.createElement("div");
+//     productBody.classList.add("card-body");
   
-    const productName = document.createElement('p');
-    productName.textContent = name;
-    productName.classList.add("card-title");
+//     const productName = document.createElement('p');
+//     productName.textContent = name;
+//     productName.classList.add("card-title");
   
-    const productPrice = document.createElement('p');
-    productPrice.textContent = price;
-    productPrice.classList.add("card-text");
+//     const productPrice = document.createElement('p');
+//     productPrice.textContent = price;
+//     productPrice.classList.add("card-text");
   
-    productDiv.appendChild(productImage);
-    productBody.appendChild(productName);
-    productBody.appendChild(productPrice);
-    productDiv.appendChild(productBody);
-    productContainer.appendChild(productDiv);
+//     productDiv.appendChild(productImage);
+//     productBody.appendChild(productName);
+//     productBody.appendChild(productPrice);
+//     productDiv.appendChild(productBody);
+//     productContainer.appendChild(productDiv);
   
-    return productContainer;
-  }
+//     return productContainer;
+//   }
   
-  function populateProducts(data, containerId) {
-    const container = document.getElementById(containerId);
-    data.forEach(product => {
-      const productCard = createProductCard(product);
-      container.appendChild(productCard);
-    });
-  }
+//   function populateProducts(data, containerId) {
+//     const container = document.getElementById(containerId);
+//     data.forEach(product => {
+//       const productCard = createProductCard(product);
+//       container.appendChild(productCard);
+//     });
+//   }
   
   // Populate each section with corresponding product data
-  populateProducts(menProductsData, 'menProductsList');
-  populateProducts(womenProductsData, 'womenProductsList');
-  populateProducts(featuredItemsData, 'featuredItemsList');
-  populateProducts(latestProductsData, 'latestProductsList');
+//   populateProducts(menProductsData, 'menProductsList');
+//   populateProducts(womenProductsData, 'womenProductsList');
+//   populateProducts(featuredItemsData, 'featuredItemsList');
+//   populateProducts(latestProductsData, 'latestProductsList');
+
+  function createCard(imagePath, title, price) {
+    console.log(imagePath)
+    const cardContainer = document.createElement("div");
+    cardContainer.classList.add("col");
+  
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add("card", "h-100");
+  
+    const img = document.createElement("img");
+    img.src = imagePath;
+    img.classList.add("card-img-top");
+    img.alt = "Card image";
+  
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+  
+    const cardTitle = document.createElement("p");
+    cardTitle.classList.add("card-title");
+    cardTitle.textContent = title;
+  
+    const cardPrice = document.createElement("p");
+    cardPrice.classList.add("card-text");
+    cardPrice.textContent = price;
+  
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardPrice);
+    cardDiv.appendChild(img);
+    cardDiv.appendChild(cardBody);
+    cardContainer.appendChild(cardDiv);
+  
+    return cardContainer;
+  }
+
+
+  function populateCards(data, containerId) {
+    const cardContainer = document.getElementById(containerId);
+  
+    data.forEach((item) => {
+      const { image, name, price } = item;
+      const card = createCard(image, name, price);
+      cardContainer.appendChild(card);
+    });
+  }
+
+  
+  populateCards(menProductsData, "menProducts");
+  populateCards(womenProductsData, "womenProductsList");
+  populateCards(featuredItemsData, "featureProductsList");
+  populateCards(latestProductsData, "latestProductsList");
