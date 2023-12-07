@@ -1,63 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
     <title>shoeccomerce</title>
 
     <style>
         .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
         .card {
-          width: 18rem;
-          margin-bottom: 20px;
+            width: 18rem;
+            margin-bottom: 20px;
         }
-    
+
         .card-img-top {
-          max-height: 200px;
-          object-fit: cover;
+            max-height: 200px;
+            object-fit: cover;
         }
-    
+
         .card-body {
-          text-align: center;
+            text-align: center;
         }
-    
+
         .btn-primary {
-          background-color: #007bff;
-          border-color: #007bff;
+            background-color: #007bff;
+            border-color: #007bff;
         }
-    
+
         .btn-primary:hover {
-          background-color: #0056b3;
-          border-color: #0056b3;
+            background-color: #0056b3;
+            border-color: #0056b3;
         }
 
         .carousel-inner {
-      height: 300px; /* Set a fixed height for the carousel */
-    }
-
-    .carousel-inner img {
-      width: 100%;
-      height: 100%; /* Make sure images fill the fixed height */
-      object-fit: cover; /* Maintain aspect ratio and cover the entire container */
-    }
-        .carousel-inner img {
-      width: 100%;
-      height: auto;
-    }
-    
-        footer {
-          background-color: #f8f9fa;
-          padding: 20px 0;
-          text-align: center;
+            height: 300px;
+            /* Set a fixed height for the carousel */
         }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+            /* Make sure images fill the fixed height */
+            object-fit: cover;
+            /* Maintain aspect ratio and cover the entire container */
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+
         #startButton {
             padding: 10px;
             font-size: 16px;
@@ -96,6 +103,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- *************************** header *********************************** -->
@@ -106,7 +114,8 @@
                 <a class="navbar-brand" href="#">
                     <img src="../img/logo.png" alt="Bootstrap" width="70" height="75" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse fw-bold" id="navbarText">
@@ -125,7 +134,7 @@
                         </li>
                     </ul>
                     <ul class="d-flex navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
+                        <li class="nav-item logincontent">
                             <a class="nav-link" href="../Login/login.html">Login</a>
                         </li>
                         <li class="nav-item">
@@ -139,8 +148,8 @@
     </header>
     <!-- *************************** header end *********************************** -->
 
-       <!-- *************************** Speech-to-text section ****************************** -->
-       <div class="container mt-4">
+    <!-- *************************** Speech-to-text section ****************************** -->
+    <div class="container mt-4">
         <h2>Search using speech</h2>
         <button id="startButton">
             <span>&#x1F3A4;</span> Start Recording
@@ -157,7 +166,7 @@
         <!-- Product cards will be dynamically added here -->
     </div>
 
- 
+
 
     <!-- *************************** Footer start ****************************** -->
     <footer class="footer bg-dark text-white mt-4 py-4">
@@ -229,9 +238,21 @@
     </footer>
     <!-- *************************** Footer end ****************************** -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const username = localStorage.getItem('username');
+            const loginLink = document.querySelector('.logincontent');
+
+            if (username) {
+                // If username is present, replace login link with welcome message
+                loginLink.innerHTML = `<a class="nav-link" href="../Login/logout.html">Logout, ${username}</a>`;
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             const startButton = document.getElementById('startButton');
             const stopButton = document.getElementById('stopButton');
@@ -286,15 +307,15 @@
         });
 
         fetch('https://dummyjson.com/products/category/womens-shoes')
-          .then(response => response.json())
-          .then(data => displayProducts(data.products))
-          .catch(error => console.error('Error fetching products:', error));
-    
+            .then(response => response.json())
+            .then(data => displayProducts(data.products))
+            .catch(error => console.error('Error fetching products:', error));
+
         // Function to dynamically display products
         // function displayProducts(products) {
         //     console.log("pds" , products)
         //   const productContainer = document.getElementById('productContainer');
-    
+
         //   // Loop through each product and create a card
         //   products.forEach(product => {
         //     const card = document.createElement('div');
@@ -311,16 +332,38 @@
         //     productContainer.appendChild(card);
         //   });
         // }
+        function addToCart(productTitle) {
+
+            console.log("added to card")
+            // Retrieve existing items from localStorage or initialize an empty array
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the product is already in the cart
+            if (!cartItems.includes(productTitle)) {
+                // Add the product title to the cart
+                cartItems.push(productTitle);
+
+                // Update the localStorage with the new cartItems
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+
+                // Optional: Provide feedback to the user (you can use alert, console.log, or any other method)
+                alert(`${productTitle} added to the cart!`);
+            } else {
+                // Optional: Provide feedback that the product is already in the cart
+                alert(`${productTitle} is already in the cart!`);
+            }
+        }
 
         function displayProducts(products) {
-      console.log("pds", products)
-      const productContainer = document.getElementById('productContainer');
+            console.log("pds", products)
+            const productContainer = document.getElementById('productContainer');
 
-      // Loop through each product and create a card
-      products.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'card mb-4';
-        card.innerHTML = `
+
+            // Loop through each product and create a card
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'card mb-4';
+                card.innerHTML = `
           <div id="carousel${product.id}" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               ${product.images.map((image, index) => `
@@ -342,12 +385,13 @@
             <h5 class="card-title">${product.title}</h5>
             <p class="card-text">${product.description}</p>
             <p class="card-text fw-bold">${product.price}</p>
-            <a href="#" class="btn btn-primary">Add to Cart</a>
+            <a href="#" class="btn btn-primary" onclick="addToCart('${product.title}')">Add to Cart</a>
           </div>
         `;
-        productContainer.appendChild(card);
-      });
-    }
+                productContainer.appendChild(card);
+            });
+        }
     </script>
 </body>
+
 </html>

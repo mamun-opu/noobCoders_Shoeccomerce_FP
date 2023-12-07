@@ -1,0 +1,26 @@
+<!-- logout.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+
+    <script>
+        // Clear all items from local storage
+        localStorage.clear();
+
+        // Redirect to the home page (index.html) after a brief delay
+        setTimeout(function () {
+            window.history.back()
+        }, 1000); // 1000 milliseconds (1 second)
+    </script>
+</head>
+
+<body>
+    <p>Logging out...</p>
+</body>
+
+</html>
