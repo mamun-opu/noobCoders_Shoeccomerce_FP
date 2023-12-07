@@ -58,6 +58,7 @@ function createCard(item) {
     // if(updateCart()){
     //   updateCart(item);
     // }
+    // updateCart(item);
     
     
     addToCartBtn.textContent = "Added";
