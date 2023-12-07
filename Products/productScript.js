@@ -1,5 +1,5 @@
 import {menProductsData, womenProductsData, featuredItemsData, latestProductsData} from '../resources/data.js';
-// import { getCart, updateCart } from '../Cart/Cart.js';
+import { getCart, updateCart } from '../Cart/Cart.js';
 
 
 function createCard(item) {
@@ -57,6 +57,7 @@ function createCard(item) {
     // if(updateCart()){
     //   updateCart(item);
     // }
+    updateCart(item);
     
     
     addToCartBtn.textContent = "Added";
