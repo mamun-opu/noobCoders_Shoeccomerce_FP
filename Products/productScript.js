@@ -2,6 +2,7 @@ import {menProductsData, womenProductsData, featuredItemsData, latestProductsDat
 // import { getCart, updateCart } from '../Cart/Cart.js';
 
 
+
 function createCard(item) {
   const { image, name, price } = item;
   const cardContainer = document.createElement("div");
