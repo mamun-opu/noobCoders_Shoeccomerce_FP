@@ -130,7 +130,7 @@
                             <a class="nav-link" href="../men/mens.html">Men</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Women</a>
+                            <a class="nav-link" href="../women/womens.html">Women</a>
                         </li>
                     </ul>
                     <ul class="d-flex navbar-nav mb-2 mb-lg-0">
@@ -334,12 +334,18 @@
         // }
         function addToCart(productTitle) {
 
+
+            if(!localStorage.getItem('username')){
+                alert(`Login to add to the cart!`);
+                return;
+            }
+
             console.log("added to card")
             // Retrieve existing items from localStorage or initialize an empty array
             let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
             // Check if the product is already in the cart
-            if (!cartItems.includes(productTitle)) {
+            if (!cartItems.includes(productTitle) && localStorage) {
                 // Add the product title to the cart
                 cartItems.push(productTitle);
 
