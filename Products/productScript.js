@@ -68,10 +68,11 @@ function populateCards(data, containerId, addToCartHandler) {
 function addToCart(product) {
   let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
   const { name } = product;
-  if (!cartItems.includes(name)) {
-    cartItems.push(name);
-    localStorage.setItem('cart', JSON.stringify(cartItems));
-  }
+  
+  
+
+  cartItems.push(name);
+  localStorage.setItem('cart', JSON.stringify(cartItems));
 }
 
 function loadProductsAndCards() {

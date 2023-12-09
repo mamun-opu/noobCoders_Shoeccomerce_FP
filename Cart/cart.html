@@ -74,7 +74,7 @@
               <a class="nav-link" href="../men/mens.html">Men</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Women</a>
+              <a class="nav-link" href="../women/womens.html">Women</a>
             </li>
           </ul>
           <ul class="d-flex navbar-nav mb-2 mb-lg-0">
@@ -107,6 +107,7 @@
       }
     });
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    console.log(cartItems)
 
     // Get the container where cart items will be displayed
     let cartContainer = document.getElementById('cart-items-container');
