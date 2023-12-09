@@ -3,27 +3,29 @@ let cart = [
     id: 'x2z1r8f9',
     image: "../img/men/card-image1.jpg",
     name: "SwiftStep Sneakers",
-    price: "65",
+    price: 65,
     quantity: 1,
   },
   {
     id: 'g5s7h3a6',
     image: "../img/men/card-image2.jpg",
     name: "VentureWalk Boots 2",
-    price: "99",
+    price: 99,
     quantity: 1,
   },
 ];
 
-export function getCart() {
+function getCart() {
   return cart;
 }
 
-export function updateCart(newItem) {
+function updateCart(newItem) {
   cart.push(newItem);
+  displayCart(cart);
 }
 
-function displayCart() {
+function displayCart(cart) {
+  console.log("display cart");
   const cartItems = document.getElementById('cart-items');
   let cartHtml = '';
   let totalAmount = 0;
@@ -94,7 +96,7 @@ function increaseQuantity(itemId) {
   const item = cart.find(item => item.id === itemId);
   if (item) {
     item.quantity++;
-    displayCart();
+    displayCart(cart);
   }
 }
 
@@ -102,14 +104,26 @@ function decreaseQuantity(itemId) {
   const item = cart.find(item => item.id === itemId);
   if (item && item.quantity > 1) {
     item.quantity--;
-    displayCart();
+    displayCart(cart);
   }
 }
 
 function deleteItem(itemId) {
   cart = cart.filter(item => item.id !== itemId);
-  displayCart();
+  displayCart(cart);
 }
 
 // Display initial cart
-displayCart();
+displayCart(cart);
+console.log("cart");
+
+// Example of how to add a new item to the cart
+const newItem = {
+  id: 'xyz789',
+  image: "../img/men/card-image3.jpg",
+  name: "New Item",
+  price: 75,
+  quantity: 1,
+};
+
+updateCart(newItem);

@@ -1,9 +1,6 @@
 import {menProductsData, womenProductsData, featuredItemsData, latestProductsData} from '../resources/data.js';
-// import { getCart, updateCart } from '../Cart/Cart.js';
 
-
-
-function createCard(item) {
+function createCard(item, addToCartHandler) {
   const { image, name, price } = item;
   const cardContainer = document.createElement("div");
   cardContainer.classList.add("col");
@@ -52,33 +49,45 @@ function createCard(item) {
     img.style.filter = "none";
   });
 
-// add to card click listener -------
   addToCartBtn.addEventListener("click", () => {
-    console.log(`Added to cart: ${name} - ${price}`);
-    // if(updateCart()){
-    //   updateCart(item);
-    // }
-    // updateCart(item);
-    
-    
+    addToCartHandler(item);
     addToCartBtn.textContent = "Added";
   });
 
   return cardContainer;
 }
 
-
-
-
-function populateCards(data, containerId) {
+function populateCards(data, containerId, addToCartHandler) {
   const cardContainer = document.getElementById(containerId);
   data.forEach((item) => {
-    const card = createCard(item);
+    const card = createCard(item, addToCartHandler);
     cardContainer.appendChild(card);
   });
 }
 
-populateCards(menProductsData, "menProducts");
-populateCards(womenProductsData, "womenProductsList");
-populateCards(featuredItemsData, "featureProductsList");
-populateCards(latestProductsData, "latestProductsList");
+function addToCart(product) {
+  let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  const { name } = product;
+  if (!cartItems.includes(name)) {
+    cartItems.push(name);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+  }
+}
+
+function loadProductsAndCards() {
+  populateCards(menProductsData, "menProducts", addToCart);
+  populateCards(womenProductsData, "womenProductsList", addToCart);
+  populateCards(featuredItemsData, "featureProductsList", addToCart);
+  populateCards(latestProductsData, "latestProductsList", addToCart);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const username = localStorage.getItem('username');
+  const loginLink = document.querySelector('.logincontent');
+
+  if (username) {
+    loginLink.innerHTML = `<a class="nav-link" href="../Login/logout.html">Logout, ${username}</a>`;
+  }
+
+  loadProductsAndCards();
+});
