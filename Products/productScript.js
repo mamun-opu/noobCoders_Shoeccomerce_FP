@@ -1,5 +1,7 @@
+// import data
 import {menProductsData, womenProductsData, featuredItemsData, latestProductsData} from '../resources/data.js';
 
+// generate card
 function createCard(item, addToCartHandler) {
   const { image, name, price } = item;
   const cardContainer = document.createElement("div");
@@ -82,6 +84,7 @@ function loadProductsAndCards() {
   populateCards(latestProductsData, "latestProductsList", addToCart);
 }
 
+// login usename
 document.addEventListener('DOMContentLoaded', () => {
   const username = localStorage.getItem('username');
   const loginLink = document.querySelector('.logincontent');
@@ -91,4 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   loadProductsAndCards();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const username = localStorage.getItem('username');
+  const loginLink = document.querySelector('.logincontent');
+
+  if (username) {
+      // If username is present, replace login link with welcome message
+      loginLink.innerHTML = `<a class="nav-link" href="../Login/logout.html">Logout, ${username}</a>`;
+  }
 });
