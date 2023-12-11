@@ -1,223 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Login - ShoeCommerce</title>
 
     <style>
-        body {
-            background-color: #f8f9fa;
-        }
+      body {
+        background-color: #f8f9fa;
+      }
 
-        .login-container {
-            max-width: 400px;
-            margin: 100px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+      .login-container {
+        max-width: 400px;
+        margin: 100px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
 
-        .login-container h2 {
-            text-align: center;
-            color: #007bff;
-        }
+      .login-container h2 {
+        text-align: center;
+        color: #007bff;
+      }
 
-        .login-form {
-            margin-top: 20px;
-        }
+      .login-form {
+        margin-top: 20px;
+      }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+      .form-group {
+        margin-bottom: 20px;
+      }
 
-        .form-group label {
-            font-weight: bold;
-            color: #007bff;
-        }
+      .form-group label {
+        font-weight: bold;
+        color: #007bff;
+      }
 
-        .form-control {
-            border-color: #007bff;
-        }
+      .form-control {
+        border-color: #007bff;
+      }
 
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
 
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
+      .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
+    <!-- *************************** header started *********************************** -->
     <header>
-        <!-- *************************** nav bar *********************************** -->
-        <nav class="navbar sticky-top navbar-expand-lg container">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="../img/logo.png" alt="Bootstrap" width="70" height="75" />
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-              aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse fw-bold" id="navbarText">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="../index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../Products/products.html">Products</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../men/mens.html">Men</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../women/womens.html">Women</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../aboutUs/aboutUs.html">About Us</a>
-                </li>
-              </ul>
-              <ul class="d-flex navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item logincontent">
-                  <a class="nav-link" href="../Login/login.html">Login</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../Cart/cart.html">Cart</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <!-- *************************** nav bar end ******************************** -->
-      </header>
-
-    <div class="login-container">
-        <h2>Login to ShoeCommerce</h2>
-        <form class="login-form" onsubmit="saveUsername()" action="../index.html">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" class="form-control" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" name="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
-        </form>
-    </div>
-
-    <footer class="footer bg-dark text-white mt-4 py-4">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3 col-sm-12">
-              <div class="footer-info">
-                <h5>Info</h5>
-                <ul class="list-unstyled">
-                  <li>Track Your Order</li>
-                  <li>Our Blog</li>
-                  <li>Privacy Policy</li>
-                  <li>Shipping</li>
-                  <li>Contact Us</li>
-                  <li>Help</li>
-                  <li>Community</li>
-                </ul>
-              </div>
-            </div>
-    
-            <div class="col-md-3 col-sm-12">
-              <div class="footer-about">
-                <h5>About</h5>
-                <ul class="list-unstyled">
-                  <li>About Us</li>
-                  <li>History</li>
-                  <li>Our Team</li>
-                  <li>Services</li>
-                  <li>Company</li>
-                  <li>Manufacture</li>
-                  <li>Wholesale</li>
-                  <li>Retail</li>
-                </ul>
-              </div>
-            </div>
-    
-            <div class="col-md-3 col-sm-12">
-              <div class="footer-links">
-                <h5>Links</h5>
-                <ul class="list-unstyled">
-                  <li>Women Shoes</li>
-                  <li>Mens Collection</li>
-                  <li>Delivery</li>
-                  <li>Shoes</li>
-                  <li>Popular</li>
-                  <li>Prices Drop</li>
-                  <li>New Products</li>
-                  <li>Best Sales</li>
-                  <li>Stores</li>
-                </ul>
-              </div>
-            </div>
-    
-            <div class="col-md-3 col-sm-12">
-              <div class="footer-contact">
-                <h5>Contact Us</h5>
-                <p>Get In Touch</p>
-                <p>ShoeCommerce</p>
-                <p>Call us: (+1) 000 000 0001</p>
-                <p>Email: contact@yourwebsite.com</p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-between mt-4">
-              <p>&copy; 2023 Shoe Store</p>
-              <p>
-                <span class="text-grey">Develoved by</span> lambton college
-                student
-              </p>
-            </div>
+      <!-- *************************** nav bar *********************************** -->
+      <nav class="navbar sticky-top navbar-expand-lg container">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="../img/logo.png" alt="Bootstrap" width="70" height="75" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse fw-bold" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Products/products.html"
+                  >Products</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../men/mens.html">Men</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../women/womens.html">Women</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../aboutUs/aboutUs.html">About Us</a>
+              </li>
+            </ul>
+            <ul class="d-flex navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item logincontent">
+                <a class="nav-link" href="../Login/login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Cart/cart.html">Cart</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </footer>
+      </nav>
+      <!-- *************************** nav bar end ******************************** -->
+    </header>
+    <!-- *************************** header end *********************************** -->
 
+    <!-- *************************** login starts *********************************** -->
+    <div class="login-container">
+      <h2>Login to ShoeCommerce</h2>
+      <form class="login-form" onsubmit="saveUsername()" action="../index.html">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+    </div>
+<!-- *************************** login ends *********************************** -->
+
+<!-- *************************** footer start *********************************** -->
+    <footer class="footer bg-dark text-white mt-4 py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-12">
+            <div class="footer-info">
+              <h5>Info</h5>
+              <ul class="list-unstyled">
+                <li>Track Your Order</li>
+                <li>Our Blog</li>
+                <li>Privacy Policy</li>
+                <li>Shipping</li>
+                <li>Contact Us</li>
+                <li>Help</li>
+                <li>Community</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-12">
+            <div class="footer-about">
+              <h5>About</h5>
+              <ul class="list-unstyled">
+                <li>About Us</li>
+                <li>History</li>
+                <li>Our Team</li>
+                <li>Services</li>
+                <li>Company</li>
+                <li>Manufacture</li>
+                <li>Wholesale</li>
+                <li>Retail</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-12">
+            <div class="footer-links">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <li>Women Shoes</li>
+                <li>Mens Collection</li>
+                <li>Delivery</li>
+                <li>Shoes</li>
+                <li>Popular</li>
+                <li>Prices Drop</li>
+                <li>New Products</li>
+                <li>Best Sales</li>
+                <li>Stores</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-12">
+            <div class="footer-contact">
+              <h5>Contact Us</h5>
+              <p>Get In Touch</p>
+              <p>ShoeCommerce</p>
+              <p>Call us: (+1) 000 000 0001</p>
+              <p>Email: contact@yourwebsite.com</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <p>&copy; 2023 Shoe Store</p>
+            <p>
+              <span class="text-grey">Develoved by</span> lambton college
+              student
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+<!-- *************************** header end *********************************** -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function saveUsername() {
-            const usernameInput = document.getElementById('username');
-            const username = usernameInput.value;
+      function saveUsername() {
+        const usernameInput = document.getElementById("username");
+        const username = usernameInput.value;
 
-            // Save the username to localStorage
-            localStorage.setItem('username', username);
+        // Save the username to localStorage
+        localStorage.setItem("username", username);
+      }
+
+      const billa = async () => {
+        const url = "https://aeona3.p.rapidapi.com/?text=man";
+        const options = {
+          method: "GET",
+          headers: {
+            "X-RapidAPI-Key":
+              "ebfc9bcae4mshc098a57e35522ecp16b3a6jsn835faedd706d",
+            "X-RapidAPI-Host": "aeona3.p.rapidapi.com",
+          },
+        };
+
+        try {
+          const response = await fetch(url, options);
+          const result = await response.text();
+          console.log(result);
+        } catch (error) {
+          console.error(error);
         }
-
-
-        const billa = async() =>{
-            const url = 'https://aeona3.p.rapidapi.com/?text=man';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'ebfc9bcae4mshc098a57e35522ecp16b3a6jsn835faedd706d',
-		'X-RapidAPI-Host': 'aeona3.p.rapidapi.com'
-	}
-};
-
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
-        }
-        billa();
-        
+      };
+      billa();
     </script>
-</body>
-
+  </body>
 </html>
