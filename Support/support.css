@@ -1,0 +1,174 @@
+#chat-icon{
+    visibility: hidden;
+}
+
+.chat-support{
+    position: relative;
+}
+
+#chat-label{
+    position: fixed;
+    bottom: 5%;
+    left: 8%;
+    transform: translate(-100%, -100%);
+    transition: all 0.3s;
+}
+
+#chat-label img{
+width: 40px;
+}
+
+
+#chat-icon:checked ~.chat-box{
+    visibility: visible;
+    transform: scale3d(1.1);
+}
+
+.chat-box{
+    visibility: hidden;
+    width: 20vw;
+    height: 40vh;
+    background-color: rgba(7, 84, 101, 0.966);
+    box-shadow: 5px 5px 5px 5px rgba(136, 139, 145, 0.58);
+    border-radius: 20px;
+    padding: 2%;
+    position: fixed;
+    bottom: 5%;
+    left: 8%;
+
+}
+
+.chat-box input{
+    position: relative;
+    top:30vh;
+    height: 7vh;
+}
+
+*{
+    margin: 0;
+    border: 0;
+
+}
+body{
+    display: flex;/* to be added to place the footer stick at botton */
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+.body-css{
+
+}
+.bodyCSS{
+    flex: 1;
+    padding: 2.5rem;  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #ffffff;
+/*    background-image: url(https://4kwallpapers.com/images/walls/thumbs_2t/10737.jpg);*/
+    padding: 20px;
+    /*background-color: rgba(0, 0, 0, 0.6);*/
+    
+
+}
+.support-section {
+    background-color: #ffffff; /* Semi-transparent white background for cards */
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px rgba(136, 139, 145, 0.58);
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+.support-section h2 {
+  color: #007BFF;
+}
+.support-section a:hover{
+   background-color: #0056b3;;
+}
+
+.addressCSS{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.address{
+    font-size: 25px;
+    padding: 20px;
+    margin: 15px;
+    
+}
+.map-container{
+    padding: 20px;
+    margin: 15px;
+    width: fit-content;
+}
+
+.btn-email,
+.btn-phone {
+    opacity: 1;
+    text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: lightskyblue;
+  color: #FFF;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  text-align: center;
+  transition: background-color 1s;
+}
+iframe.footerBlog{
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border: none;
+        display: block;
+        text-align: center;
+}
+iframe.headerBlog{
+    border: none;
+}
+@media screen and (max-width:480px){
+    iframe.footerBlog{
+        height: 90px;
+    }
+    iframe.headerBlog{
+        height: 60vh;
+    }
+    .map-container {
+        flex: 1;
+        max-width: 100%;
+        margin: 20px;
+        padding: 20px;
+    }
+    .addressCSS{
+        flex-direction: column;
+    }
+
+    .map-container iframe {
+        height: 200px;
+        width: 200px; /* Adjust map height for mobile and tablet */
+    }
+}    
+
+@media screen and (min-width : 481px) and (max-width:768px){
+
+    iframe.footerBlog{
+        height: 70px;
+    }
+    .blogheaderCSS{
+     height: 120px;
+    }
+    .addressCSS{
+        flex-direction: column;
+    }
+}    
+
+@media screen and (min-width:769px){
+    .headerCSS{
+     height: 120px;
+    }  
+    iframe.footerBlog{
+        height: 70px;
+    }
+}
